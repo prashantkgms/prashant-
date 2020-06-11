@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>js programs part3</title>
+<script>
+var ar = [5, 5, 5, 2, 2, 2, 2, 2, 9, 4];
+
+var Unique = []; 
+var Counts = []; 
+
+for(var i in ar)
+{
+    var Index = ar[i];
+    Unique[Index] = ar[i];
+    if(typeof(Counts[Index])=='undefined')  
+        Counts[Index]=1;
+    else
+        Counts[Index]++;
+}
+Unique = Unique.filter(function(){ return true});
+Counts = Counts.filter(function(){ return true});
+
+alert(ar.join(',')+"are the actual array elements");
+alert(Unique.join(',')+"are unique elements in array");
+var a=[];
+
+for(var i=0; i<Unique.length; i++)
+{
+    a.push(Unique[i] + ':' + Counts[i]);
+}
+alert("no of freq:element="+a.join(', '));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head><title>js programs part2</title></head>
+<body><center>
+    <h1>mini programs part2</h1>
+    <br><br>
+    <h3><li>Javascript Program add and remove elements</li></h3>
+    <p>Click the button to add a new element to the array.</p>
+
+    <button onclick="mypush()">Try it</button>
+
+    <p id="pushi"></p>
+
+<p>Click the button to remove the last element from the array.</p>
+
+<button onclick="mypop()">Try it</button>
+
+<p id="popi"></p>
+
+
+<script>
+var pusharray = [1,2,3.4,5,6,7];
+document.getElementById("pushi").innerHTML = pusharray;
+
+function mypush() {
+  pusharray.push("push");
+  document.getElementById("pushi").innerHTML = pusharray;
+}
+
+var  poparray= [1,2,3,4,5,6,7,8,9,10];
+document.getElementById("popi").innerHTML = poparray;
+
+function mypop() {
+  poparray.pop();
+  document.getElementById("popi").innerHTML = poparray;
+}
+
+
+</script>
+</center>>
+</body>
+</html>

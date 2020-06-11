@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>js programs part1</title>
+</head>
+<body>
+<center>
+  <h1>mini programs</h1>
+  <br><br>
+  <h3><li>Javascript Program to find leap year</li></h3>
+<input type="text" id="year"></input>
+<button onclick="check_leapyear()">Check!</button>
+<br>
+<br>
+<h3><li>Javascript Program to find current time </li></h3>
+    <button onclick = "current_date()"> 
+        Click here for current date
+    </button>
+    <br>
+    <br>
+    <h3><li>Javascript Program to find multiplication and division of two numbers </li></h3>
+    1st Number : <input type="text" id="firstNumber" /><br>
+    2nd Number: <input type="text" id="secondNumber" /><br>
+    <br>
+    <input type="button" onClick="multiplyBy()" Value="Multiply" />
+    <input type="button" onClick="divideBy()" Value="Divide" />
+    <br>
+    <br>
+    <h3><li>Javascript Program to find sum of array elements </li></h3>   
+    <button onclick="sumarray()">  
+        Click Here!  
+    </button> 
+      
+    <br><br> 
+      
+    Sum of first 10 numbers in a array: <span id="soa"></span> 
+    
+    <h3><li>Javascript Program to remove the duplicates in array elements</li></h3>
+    <button onclick="getUnique(names)">  
+        Click Here!  
+    </button>
+    unique elements in an array: <span id="unique"></span>
+
+</center>
+<script>
+    //program 1-starts
+function check_leapyear(){
+    var year;
+     year = document.getElementById("year").value;
+
+    if( (0 == year % 4) && (0 != year % 100) || (0 == year % 400) )
+    {
+        alert(year+" is a leap year");  
+    }
+    else
+    {
+        alert(year+" is not a leap year");  
+    }
+}
+
+//program 1-ends
+//program 2-starts
+function current_date(){
+    var today = new Date();
+    var date =today.getDate()+'/'+(today.getMonth()+1)+'/'+ today.getFullYear()
+    alert(date+"is the current time");
+}
+//program 2-ends
+//program 3-starts
+function multiplyBy()
+{
+    num1 = document.getElementById("firstNumber").value;
+    num2 = document.getElementById("secondNumber").value;
+    result=num1*num2;
+    alert(result+"is the answer");
+}
+
+function divideBy() 
+{ 
+    num1 = document.getElementById("firstNumber").value;
+    num2 = document.getElementById("secondNumber").value;
+    result1=num1/num2;
+    alert(result1+"is the answer");
+}
+//program 3-ends
+//program 4-starts
+var arr=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+          
+        function sumofArray(sum, num) {  
+            return sum + num;  
+        }  
+        function sumarray(item) {  
+            document.getElementById("soa").innerHTML =arr.reduce(sumofArray);  
+        }  
+//program 4 -ends
+//program 5 -starts
+
+function getUnique(array){
+        var uniqueArray = [];
+        for(var value of array){
+            if(uniqueArray.indexOf(value) === -1){
+                document.getElementById("unique").innerHTML=uniqueArray.push(value);
+            }
+        }
+        return uniqueArray;
+    }
+    
+    var names = [1,2,6,1,2,7,4,5];
+    var uniqueNames = getUnique(names);
+
+
+</script>
+</body>
+</html>

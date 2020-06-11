@@ -1,0 +1,81 @@
+<html>
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+            float: left;
+            padding: 30px;
+            text-align: center;
+            background-color: gray;
+        }   
+    </style>
+    
+</head>
+<body><center>
+    <h1>EVENT HANDLERS</h1>
+    <h2><li>onclick event </li></h2>
+    <h5>Click on button to change the background color</h5>
+    <button onclick = "button()"> 
+        Click here 
+    </button>
+    <br>
+    <br>
+    <h2> <li> onmouseover & onmouseout  event </li></h2>
+    <img onmouseover="bImg(this)" onmouseout="nImg(this)" border="1" src="giphy.gif" alt="Smiley" width="64" height="64">
+    <p>This will explain "onmouseover" and "onmouseout" events</p>
+    <br>
+    <br>
+    <div onmousemove="myMoveFunction()">
+        <p>onmousemove: <br> <span id="demo">Mouse move me!</span></p>
+    </div>
+    
+    <div onmouseenter="myEnterFunction()">
+        <p>onmouseenter: <br> <span id="demo2">Mouse enter me!</span></p>
+    </div>
+    
+    <div onmouseover="myOverFunction()">
+        <p>onmouseover: <br> <span id="demo3">Mouse over me!</span></p>
+    </div>
+    
+</center>
+<script type="text/javascript"> 
+    
+     
+    function changeColor(color) { 
+        document.body.style.background = color; 
+    } 
+    
+    function button() { 
+    var evt1 = document.getElementById("button"); 
+        changeColor('grey');
+    }
+    function bImg(x) {
+        x.style.height = "128px";
+        x.style.width = "128px";
+    }
+    
+    function nImg(x) {
+        x.style.height = "64px";
+        x.style.width = "64px";
+    }
+    let moveCount = 0;
+    let enterCount = 0;
+    let overCount = 0;
+    
+    function myMoveFunction() {
+        document.getElementById("demo").innerHTML = moveCount+=1;
+    }
+    
+    function myEnterFunction() {
+        document.getElementById("demo2").innerHTML = enterCount+=1;
+    }
+    
+    function myOverFunction() {
+        document.getElementById("demo3").innerHTML = overCount+=1;
+    }
+</script>
+</body>
+</html>
